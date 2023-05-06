@@ -3,7 +3,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id')
 
-function createdHMTLContentPokemon(pokemon){
+function createdHMTLContentPokemonBaseStats(pokemon){
     return `
     <div class="pokemon ${pokemon.type}">
     <div class="divButtonBack">
@@ -30,10 +30,12 @@ function createdHMTLContentPokemon(pokemon){
         </div>
 
         <div class="sectionDetail">
+            <div class="detatil">
             <button id="About" class="buttonDatailMovHab">About</button>
             <button id="Base_Movies" class="buttonDatailMovHab">Base Stats</button>
             <button id="Evolution" class="buttonDatailMovHab">Evolution</button>
             <button id="Moves" class="buttonDatailMovHab">Moves</button>
+            </div>
             <div>
                 <table class="tabbleHab">
                     <tbody>
@@ -75,7 +77,7 @@ function createdHMTLContentPokemon(pokemon){
 function loadPokemonContent(id) {
     pokeApi.getPokemonsContentByID(id).then((pokemon) => {
         console.log(pokemon);
-        const newHtml = createdHMTLContentPokemon(pokemon);
+        const newHtml = createdHMTLContentPokemonBaseStats(pokemon);
         pokemonContent.innerHTML += newHtml
     })
 }

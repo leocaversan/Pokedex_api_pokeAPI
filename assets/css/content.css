@@ -44,7 +44,10 @@ button:active{
     border-radius: 1rem;
     cursor: pointer;
 } */
-
+.detatil{
+    display: flex;
+    justify-content: center;
+}
 .detail_class{
     border: none;
     padding-top : 20px;
@@ -174,7 +177,7 @@ button:active{
     border-radius: 1rem;
 }
 
-.pokemon .number {
+.pokemon.number {
     color: #000;
     opacity: .3;
     text-align: right;
